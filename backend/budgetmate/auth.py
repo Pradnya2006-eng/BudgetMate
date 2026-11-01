@@ -93,7 +93,7 @@ def _client_key(email):
     return f"{request.remote_addr}|{email}"
 
 
-@bp.post("/register")
+.post("/register")
 def register():
     data = json_body()
     try:
@@ -107,7 +107,7 @@ def register():
         return error("An account with this email already exists.", 409)
 
     try:
-        user_id, _ = execute(
+        user_id, _ = execute(@bp
             "INSERT INTO users (name, email, password_hash) VALUES (%s, %s, %s)",
             (name, email, generate_password_hash(password)),
         )

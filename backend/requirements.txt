@@ -3,3 +3,4 @@ PyMySQL>=1.1,<2
 cryptography>=42        # lets PyMySQL log in to MySQL 8 (caching_sha2_password)
 python-dotenv>=1.0
 pytest>=8               # only needed to run the tests
+gunicorn

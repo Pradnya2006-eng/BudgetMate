@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS users (
   name          VARCHAR(100)    NOT NULL,
   email         VARCHAR(254)    NOT NULL,
   password_hash VARCHAR(255)    NOT NULL,  -- salted hash, never the password itself
-  role VARCHAR(10) NOT NULL DEFAULT 'user',
+  role ENUM('user', 'admin') NOT NULL DEFAULT 'user',
   created_at    TIMESTAMP       NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
   UNIQUE KEY uq_users_email (email)

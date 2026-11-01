@@ -46,6 +46,7 @@ def load_config():
         "DB_USER": os.environ.get("DB_USER", "root"),
         "DB_PASSWORD": os.environ.get("DB_PASSWORD", ""),
         "DB_NAME": os.environ.get("DB_NAME", "budgetmate"),
+        "DB_SSL_CA": os.environ.get("DB_SSL_CA", str(BACKEND_DIR / "ca.pem")),
         "FRONTEND_URL": os.environ.get("FRONTEND_URL", "http://localhost:5173").rstrip("/"),
         "SMTP_HOST": os.environ.get("SMTP_HOST", "").strip(),
         "SMTP_PORT": _int("SMTP_PORT", 587),

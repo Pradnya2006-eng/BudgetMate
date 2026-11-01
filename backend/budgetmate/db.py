@@ -19,6 +19,7 @@ def make_mysql_factory(config):
             cursorclass=pymysql.cursors.DictCursor,
             autocommit=False,
             connect_timeout=10,
+            ssl={"ca":config["DB_SSL_CA"]}
         )
 
     return factory
