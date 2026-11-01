@@ -93,7 +93,7 @@ def _client_key(email):
     return f"{request.remote_addr}|{email}"
 
 
-.post("/register")
+@auth_bp.post("/register")
 def register():
     data = json_body()
     try:
