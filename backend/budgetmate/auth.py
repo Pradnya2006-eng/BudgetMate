@@ -107,11 +107,11 @@ def register():
         return error("An account with this email already exists.", 409)
 
     try:
-        user_id, _ = execute(@bp
+        user_id, _ = execute(
             "INSERT INTO users (name, email, password_hash) VALUES (%s, %s, %s)",
-            (name, email, generate_password_hash(password)),
+             (name, email, generate_password_hash(password)),
         )
-        commit()
+        commit() 
     except Exception as exc:  # two sign-ups with one email at the same moment
         if is_duplicate_error(exc):
             return error("An account with this email already exists.", 409)
